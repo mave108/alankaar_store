@@ -1,0 +1,6 @@
+// flex
+@mixin flex($orientation, $wrap){
+  display: flex;
+  flex-flow: $orientation $wrap;
+ 
+}

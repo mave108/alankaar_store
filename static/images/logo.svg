@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="228" height="58" viewBox="0 0 228 58">
+    <defs>
+        <linearGradient id="a" x1="23.065%" x2="87.499%" y1="8.443%" y2="88.573%">
+            <stop offset="0%" stop-color="#FF9C71"/>
+            <stop offset="100%" stop-color="#FF5630"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M29 25c16.016 0 29 12.984 29 29S45.016 83 29 83 0 70.016 0 54s12.984-29 29-29z" transform="translate(0 -25)"/>
+        <text fill="#FFF" font-family="Righteous-Regular, Righteous" font-size="75" letter-spacing="1.071" transform="translate(0 -25)">
+            <tspan x="8.168" y="74">a</tspan>
+        </text>
+        <text font-family="Righteous-Regular, Righteous" font-size="38" letter-spacing=".543" transform="translate(0 -25)">
+            <tspan x="65.665" y="56" fill="#444">al</tspan> <tspan x="98.813" y="56" fill="#FF5D36">a</tspan> <tspan x="122.457" y="56" fill="#444">nk</tspan> <tspan x="164.771" y="56" fill="#FF613A">a</tspan> <tspan x="188.414" y="56" fill="#444">ar</tspan>
+        </text>
+        <text fill="#444" font-family="Comfortaa-Regular, Comfortaa" font-size="12" letter-spacing=".171" transform="translate(0 -25)">
+            <tspan x="68.781" y="78">be you be exclusive</tspan>
+        </text>
+    </g>
+</svg>

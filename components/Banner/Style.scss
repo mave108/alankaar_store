@@ -1,0 +1,9 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+@import "../common/style/mixins/sticky";
+
+.banner{
+    height: 45rem;
+    width: 100%;
+    background: url('/static/images/header_bg.png')
+}

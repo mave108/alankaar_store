@@ -1,0 +1,82 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+@import "../common/style/mixins/sticky";
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background: $white;
+}
+.user-nav{
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.08);
+    height: 3.4rem;
+    margin: 0 0 0;
+    width: 100%;    
+    & .inner{        
+        @include flex(row,nowrap);
+        justify-content: flex-end;
+        margin: 0 7rem;
+        align-items: center;
+        height: 100%;
+        .nav-img{
+            height: 2.2rem;
+            width: 2.2rem;
+            background: url('/static/images/sprite.svg') no-repeat 0 0;
+            text-indent: -9999px;
+            margin-right: 26px;
+            &.search{
+                background-position: -8px -6px;
+            }
+            &.cart{
+                background-position: -8px -56px;
+            }
+            &.user{
+                background-position:-8px -104px;
+            }
+        }
+        .contact-up{
+            color: $primary-text-color;
+            font-size: 1.2rem;
+            font-weight: 500;
+            span{ color: $brand-color;}
+        }
+    }
+}
+.main-nav{
+    width: 100%;
+    padding: 0 7rem;
+    @include flex(row,nowrap);
+    justify-content: space-between;
+    height: 6.3rem;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    .menu ul{
+        @include flex(row,nowrap);
+        justify-content: space-around;
+        
+        li{
+            margin-left: 4.5rem;    
+            position: relative;        
+            a{
+            color: $primary-text-color;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            }
+            &.active a,a:hover{
+                color: $brand-color;
+                }
+            &.active a::after, a:hover::after{                
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                height: 1px;
+                background-color: $brand-color;
+                width: 100%;
+                left: 0;
+                }
+        }
+    }
+}
