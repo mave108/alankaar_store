@@ -1,0 +1,56 @@
+@mixin btn($radius:4px,$default:true,$transparent:false,$pill:false,$fullWidth:false,$size:$btn-default,$bg-color:$brand-color,$color:$white) {
+    @include transition(all 0.7s ease);
+    cursor: pointer;
+    font-weight: $regular;
+    display: inline-block;
+    text-align: center;
+    letter-spacing: .05em;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: #{($size/100)*10}px;
+    padding:8px 12px;
+    min-width: #{$size}px;
+    line-height: $size/100;
+    max-width: 100%;
+    border: solid 1px transparent;
+    @include border-radius($radius);
+    @if $default {
+      background: $bg-color;
+      color:$color;
+      &:hover,
+      &:active{
+        background: darken($bg-color,10%);
+        color: $color;
+      }
+    }
+    @if $transparent {
+      background: transparent;
+      border-color:$bg-color;
+      color: $bg-color;
+      &:hover,
+      &:focus,
+      &:active{
+        background: $bg-color;
+        color: $white;
+        border-color:$bg-color;
+      }
+    }
+    @if $pill {
+      @include border-radius(30px);
+    }
+    @if $fullWidth {
+      width: 100%;
+    }
+    &:focus{
+      outline: none;
+    }
+}
+%btnGroup{
+	.btn{
+        @media #{$small-up} {
+	       	margin-right: 15px;
+        }
+            margin-right:5px;
+	}
+}

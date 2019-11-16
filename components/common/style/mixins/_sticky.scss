@@ -1,0 +1,10 @@
+
+@mixin stickyBottom{
+  bottom: 0;
+  position: fixed;
+  z-index: 2;
+  left: 15px;
+  width: calc(100% - 30px)!important;
+  transition: 0s;
+  font-weight: normal !important;
+}

@@ -1,0 +1,59 @@
+@import "./utils/settings";
+@import "./utils/mixins";
+@import "./utils/types";
+:root{
+
+}
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: $brand-color;
+  text-decoration: none;
+}
+.clearfix {
+  @include clearfix;
+}
+.right {
+  float: right !important;
+}
+.left {
+  float: left !important;
+}
+@media #{$small-down} {
+    .hideSmall{
+        display: none !important;
+    }
+}
+@media #{$small-up} {
+    .hideBig{
+        display: none !important;
+    }
+}
+.container{
+    @include container;
+}
+.btn {
+    @include btn();
+}
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,4 @@
+//text color with alpha
+@mixin textColor($alpha) {
+    color: rgba($primary-text-color, $alpha);
+}
