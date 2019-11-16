@@ -20,8 +20,12 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@svgr/webpack": "^4.3.3",
+    "file-loader": "^4.2.0",
+    "next-images": "^1.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-cssnext": "^3.1.0",
-    "postcss-loader": "^3.0.0"
+    "postcss-loader": "^3.0.0",
+    "url-loader": "^2.2.0"
   }
 }

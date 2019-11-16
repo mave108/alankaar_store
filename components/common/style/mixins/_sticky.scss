@@ -1,6 +1,6 @@
 
-@mixin stickyBottom{
-  bottom: 0;
+@mixin stickyTop{
+  top: 0;
   position: fixed;
   z-index: 2;
   left: 15px;
