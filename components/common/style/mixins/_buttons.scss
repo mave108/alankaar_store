@@ -1,4 +1,4 @@
-@mixin btn($radius:4px,$default:true,$transparent:false,$pill:false,$fullWidth:false,$size:$btn-default,$bg-color:$brand-color,$color:$white) {
+@mixin btn($radius:4rem,$default:true,$transparent:false,$pill:false,$fullWidth:false,$size:$btn-default,$bg-color:$brand-color,$color:$white) {
     @include transition(all 0.7s ease);
     cursor: pointer;
     font-weight: $regular;

@@ -1,9 +1,56 @@
 @import "../common/style/utils/settings";
 @import "../common/style/mixins/flex";
-@import "../common/style/mixins/sticky";
+@import "../common/style/mixins/borderRadius";
+@import "../common/style/mixins/animations";
+@import "../common/style/mixins/buttons";
+
 
 .banner{
     height: 45rem;
     width: 100%;
-    background: url('/static/images/header_bg.png')
+    background: url('/static/images/header_bg.png') no-repeat center center;
+    background-size: cover;
+    .container{
+        height: 100%;
+    }
+    .slide1{
+        @include flex(row,nowrap);
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;        
+        .left, .right{
+            background: url('/static/images/suited_man.png') no-repeat center bottom; 
+            height: 100%;
+            width: 100%;     
+            flex: 1;                                           
+        }
+        .right{
+            background: url('/static/images/suited_man.png') no-repeat center bottom;             
+        }
+        .content {
+            text-align: center;
+            flex: 1;
+            p:nth-child(1){            
+                font-size: 65px;
+                font-weight: bold;
+                color: $primary-text-color;
+                padding-bottom: 3.8rem; 
+            }
+            p:nth-child(2){
+                padding-bottom: .5rem;
+                font-size: 24px;
+                font-weight: bold;
+                color: $primary-text-color;
+            }
+            p:nth-child(3),p:nth-child(3),p:nth-child(4){
+                font-size: 24px;
+                font-weight: bold;
+                color: $primary-text-color;
+                padding-bottom: 3.8rem; 
+            }
+            .btn{
+                @include btn;
+            }
+        }
+    }
 }

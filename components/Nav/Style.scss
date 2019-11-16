@@ -14,8 +14,7 @@
     width: 100%;    
     & .inner{        
         @include flex(row,nowrap);
-        justify-content: flex-end;
-        margin: 0 7rem;
+        justify-content: flex-end;        
         align-items: center;
         height: 100%;
         .nav-img{
@@ -43,15 +42,20 @@
     }
 }
 .main-nav{
-    width: 100%;
-    padding: 0 7rem;
+    width: 100%;    
     @include flex(row,nowrap);
     justify-content: space-between;
     height: 6.3rem;
     align-items: center;
     position: sticky;
-    top: 0;
-    .menu ul{
+    top: 0;    
+    .logo{
+        flex: 1;
+        padding: .5rem 0 0 0;
+    }
+    .menu {
+        flex: 1;
+        ul{
         @include flex(row,nowrap);
         justify-content: space-around;
         
@@ -79,4 +83,5 @@
                 }
         }
     }
+}
 }
