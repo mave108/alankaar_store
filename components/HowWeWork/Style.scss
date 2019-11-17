@@ -1,0 +1,57 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+
+.hww-section{     
+    .clearfix-height{
+        height: 6.4rem;
+    }
+    .hww-content{
+        @include flex(row,nowrap);
+        justify-content: space-between;        
+        .left{                        
+            padding: 6.4rem 6.4rem 0 6.4rem;            
+            
+        }
+        .rod{
+            background-color: #f6f4f4;
+            width: 3px;
+            &::after{
+                content: '';
+                display: block;
+                background-color: #f7f7f7;
+                width: 1.7rem;
+                height: 1.7rem;
+                border-radius: 50%;
+                margin-left: -0.65rem;    
+                margin-top: 6.4rem;            
+            }
+        }        
+        .right{            
+            padding: 6.4rem 6.4rem 0 6.4rem;
+            padding-top: calc(10% + 6.4rem);      
+        }
+    }
+    .heading{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $primary-text-color;
+        text-align: left;     
+        &::before{
+            content: attr(counter);            
+            display: inline-block;
+            font-size: 1.8rem;
+            padding: 2.2rem;                        
+            border-radius: 50%;
+            background: #f7f7f7;
+            margin-right: 1rem;
+        }   
+    }
+    .sub-heading{
+        font-size: 1.6rem;
+        font-weight: normal;
+        color: $primary-text-color;
+        margin-top: 2rem;
+        text-align: left;
+        line-height: 2.5rem;
+    }
+}

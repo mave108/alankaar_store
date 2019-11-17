@@ -1,0 +1,12 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+
+.insta-section{
+    .primary-text-color{
+      color: $brand-color;
+
+    }
+    .insta-content{
+        @include flex(row, nowrap);
+    }
+}

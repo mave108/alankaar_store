@@ -1,0 +1,44 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+@import "../common/style/mixins/boxShadow";
+@import "../common/style/mixins/borderRadius";
+
+.adbox{
+    @include flex(row,nowrap);
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 3.7rem;
+    div:nth-child(1){ 
+        .ad1,.ad2{
+            @include boxShadow;
+            @include border-radius(5px);
+            width: 37.1rem;
+            height: 18.1rem;            
+            background: url('/static/images/women-add.png') no-repeat center center;
+        }
+        .ad2{            
+            background: url('/static/images/child_ad.jpg') no-repeat center center;
+            margin-top: 2.1rem;
+        }
+    }
+    
+    div:nth-child(2),div:nth-child(3){
+        @include boxShadow;
+        @include border-radius(5px);
+        width: 27.1rem;                
+    }
+    div:nth-child(4){
+        .ad1,.ad2{
+            @include boxShadow;
+            @include border-radius(5px);
+            width: 23.9rem;
+            height: 18.1rem;            
+            background: url('/static/images/women-add.png') no-repeat center center;
+        }
+        .ad2{            
+            background: url('/static/images/child_ad.jpg') no-repeat center center;
+            margin-top: 2.1rem;
+        }
+    }
+
+}

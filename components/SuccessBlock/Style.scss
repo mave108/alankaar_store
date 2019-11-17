@@ -1,0 +1,38 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+
+.sb-section{
+    background-color: rgba(252, 245, 228, .37);
+    margin-top: 3.2rem;
+    .sb-content{
+        @include flex(row,nowrap);
+        justify-content: space-between;
+        padding: 4.6rem 21.6rem 5rem 21.6rem;
+        .icon{            
+            height: 13.6rem;
+        }
+        .title{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .count{
+            font-size: 4rem;
+            font-weight: 600;   
+        }
+        div:nth-child(1){
+            .icon{
+                background: url('/static/icons/cart.svg') no-repeat center center;               
+            }
+        }
+        div:nth-child(2){
+            .icon{
+                background: url('/static/icons/happy.svg') no-repeat center center;
+            }
+        }
+        div:nth-child(3){
+            .icon{
+                background: url('/static/icons/target-arrow.svg') no-repeat center center;
+            }
+        }
+    }
+}

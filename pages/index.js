@@ -3,6 +3,13 @@ import { connect } from 'react-redux'
 import { startClock, serverRenderClock } from '../store'
 import Examples from '../components/examples'
 import BaseLayout from '../components/common/layout/BaseLayout';
+import Banner from '../components/Banner/Banner';
+import AdBox from '../components/AdBox/AdBox';
+import ProductContainer from '../components/Products/ProductContainer';
+import HowWeWork from '../components/HowWeWork/HowWeWork';
+import SuccessBlock from '../components/SuccessBlock/SuccessBlock';
+import Testimonials from '../components/Testimonials/Testimonials';
+import InstaPosts from '../components/InstaPosts/InstaPosts';
 
 class Index extends React.Component {
   static getInitialProps({ reduxStore, req }) {
@@ -22,9 +29,17 @@ class Index extends React.Component {
   }
 
   render() {
-    return (<BaseLayout>
-      <h1>Home Page</h1>
-    </BaseLayout>);
+    return (
+      <BaseLayout>
+        <Banner />
+        <AdBox />
+        <ProductContainer />
+        <HowWeWork />
+        <SuccessBlock />
+        <Testimonials />
+        <InstaPosts />
+      </BaseLayout>
+    );
   }
 }
 

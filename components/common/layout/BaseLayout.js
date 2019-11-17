@@ -2,7 +2,7 @@ import Head from 'next/head'
 import '../style/BaseStyle.scss';
 import Header from '../../Header/Header';
 import Nav from '../../Nav/Nav';
-import Banner from '../../Banner/Banner';
+
 
 const BaseLayout = (props) => {
     const { className, title, cannonical, children, metas = [] } = props;
@@ -23,7 +23,6 @@ const BaseLayout = (props) => {
             <main className={`${className}`}>
                 <Header>
                     <Nav />
-                    <Banner />
                 </Header>
                 <div className="wrapper">
                     {children}

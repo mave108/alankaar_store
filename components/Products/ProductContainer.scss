@@ -1,0 +1,11 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+@import "../common/style/mixins/borderRadius";
+@import "../common/style/mixins/boxShadow";
+
+.pp-section{   
+    .product-container{
+        @include flex(row,nowrap);
+        justify-content: space-between;        
+    }
+}

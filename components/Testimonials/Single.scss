@@ -1,0 +1,43 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+@import "../common/style/mixins/boxShadow";
+@import "../common/style/mixins/borderRadius";
+
+.tslide{    
+    @include boxShadow;
+    @include border-radius(.5rem);
+    padding: 5.8rem 7.5rem 0 10.1rem;
+    font-size: 16px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.54);
+    flex: 1;
+    background: #fff;
+    .text{
+        width: 36.4rem;
+        line-height: 1.88;
+        padding-bottom: 2.2rem;
+        &::before{
+            content: "";
+            display: inline-block;
+            background: url('/static/icons/quote.svg') no-repeat center center;
+            width: 5.4rem;
+            height: 5rem;
+            margin-left: calc(-5.4rem - 1.7rem);
+            margin-right: 1.7rem;
+        }
+    }
+    .user-name{
+        font-size: 2.0rem;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.7);
+    }
+    .user-city{
+        font-size: 1.6rem;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.36);
+        padding: .7rem 0;
+        margin-bottom: 3.6rem;
+    }
+    &.tactive{
+    }
+}

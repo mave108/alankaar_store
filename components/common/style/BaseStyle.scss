@@ -62,3 +62,21 @@ a {
 .text-center {
   text-align: center;
 }
+
+.home-section-heading{
+  margin-top: 6.2rem;        
+  h3{
+      font-size: 2.4rem;
+      font-weight: bold;
+      text-align: center;
+      color: $primary-text-color
+  }
+  h4{
+      font-size: 1.8rem;
+      font-weight: normal;
+      text-align: center;
+      margin-bottom: 4.2rem;  
+      margin-top: 1.2rem;  
+      color: $light-grey;
+  }  
+}
