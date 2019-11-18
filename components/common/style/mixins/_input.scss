@@ -1,0 +1,14 @@
+// flex
+@mixin input{   
+   padding: 1.6rem 2.6rem;
+   background-color: #fff;
+   border: none;
+   font-size: 1.4rem;
+   width: 100%;
+   color: #444;
+   &::placeholder{
+      color: rgba(68, 68, 68, .44);
+      text-transform: uppercase;
+   }
+  }
+  

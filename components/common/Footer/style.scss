@@ -1,0 +1,78 @@
+@import "../style/mixins/flex";
+
+.main-footer{
+    background-color: #f7f7f7;
+    padding: 2.8rem 0;
+    .container{
+        @include flex(row,nowrap);
+        justify-content: space-between;
+        align-items: flex-start;
+        .subs-wrapper{
+            padding: 2.1rem 0;
+        }
+        .socail-icons{            
+            ul{
+               @include flex(row,nowrap);    
+            li{
+                height: 2.5rem;
+                width: 2.5rem;
+                margin-right: 2.6rem;
+                padding: 2rem;
+            }      
+            li:nth-child(1){
+                background: url('/static/icons/instagram.svg') no-repeat center center;
+            }
+            li:nth-child(2){
+                background: url('/static/icons/pinterest.svg') no-repeat center center;
+            }
+            li:nth-child(3){
+                background: url('/static/icons/youtube.svg') no-repeat center center;
+            }
+            li:nth-child(4){
+                background: url('/static/icons/twitter.svg') no-repeat center center;
+            }
+            li:nth-child(5){
+                background: url('/static/icons/facebook.svg') no-repeat center center;
+            }
+        }
+        }
+        .useful-links{
+            font-size: 1.2rem;                                    
+            line-height: 2;
+            letter-spacing: 0.04px;
+            color: #444;
+            margin-top: .6rem;
+        }
+        .contact-info{
+            padding: 1rem 0;
+            p{
+                font-size: 1.2rem;
+                line-height: 2.1rem;
+                letter-spacing: 0.05px;
+                color: #444;
+            }
+        }
+    }
+}
+
+.small-footer{
+    .container{
+        @include flex(row, nowrap);
+        justify-content: space-between;
+        align-items: center;
+        height: 5.1rem;
+        padding: .8rem 0 1.2rem 0;
+        div:nth-child(1){                                    
+            font-size: 1.2rem;                                    
+            line-height: 4.25;
+            letter-spacing: 0.04px;            
+            color: #444444;
+            flex: 1;
+        }       
+    }
+}
+.f-heading{
+    font-size: 1.6rem;
+    font-weight: 600;
+
+}

@@ -14,14 +14,19 @@
             @include border-radius(5px);
             width: 37.1rem;
             height: 18.1rem;            
-            background: url('/static/images/women-add.png') no-repeat center center;
+            background: url('/static/images/banner_11.png') no-repeat center center;
         }
         .ad2{            
             background: url('/static/images/child_ad.jpg') no-repeat center center;
             margin-top: 2.1rem;
         }
     }
-    
+    div:nth-child(2){ 
+        background: url('/static/images/ad_men1.png') no-repeat center bottom;
+    }
+    div:nth-child(3){ 
+        background: url('/static/images/ad_women2.png') no-repeat center bottom;
+    }
     div:nth-child(2),div:nth-child(3){
         @include boxShadow;
         @include border-radius(5px);

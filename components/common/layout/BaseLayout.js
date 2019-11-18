@@ -2,6 +2,7 @@ import Head from 'next/head'
 import '../style/BaseStyle.scss';
 import Header from '../../Header/Header';
 import Nav from '../../Nav/Nav';
+import Footer from '../Footer/Footer';
 
 
 const BaseLayout = (props) => {
@@ -27,6 +28,7 @@ const BaseLayout = (props) => {
                 <div className="wrapper">
                     {children}
                 </div>
+                <Footer />
             </main>
 
         </>

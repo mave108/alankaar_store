@@ -2,11 +2,16 @@
 @import "../common/style/mixins/flex";
 
 .insta-section{
+  padding: 0 0 1rem 0;
     .primary-text-color{
       color: $brand-color;
 
     }
     .insta-content{
-        @include flex(row, nowrap);
+        @include flex(row, nowrap);   
+        justify-content: space-between;
+        img{
+          width: 100%;
+        }     
     }
 }

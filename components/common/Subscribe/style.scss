@@ -1,0 +1,23 @@
+@import "../style/utils/settings";
+@import "../style/mixins/flex";
+@import "../style/mixins/boxShadow";
+@import "../style/mixins/borderRadius";
+@import "../style/mixins/input";
+
+.subs-wrapper{
+    @include flex(row,nowrap);
+    justify-content: flex-start;
+    align-items: flex-start;
+    input.subscribe{
+        @include boxShadow;
+        @include border-radius(4rem 0 0 4rem);
+        @include input;
+        background: #fff;
+        width: 30rem;
+    }    
+    .btn.subscribe{
+        @include border-radius(0 4rem 4rem 0);
+        min-width: 13.7rem;
+        padding:11px 12px;
+    }
+}
