@@ -1,11 +1,15 @@
 @import "../common/style/utils/settings";
 @import "../common/style/mixins/flex";
 @import "../common/style/mixins/sticky";
-
+.nav-container{
+    transition: all .3s;
+}
 .sticky{
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     background: $white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .08);
 }
 .user-nav{
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.08);

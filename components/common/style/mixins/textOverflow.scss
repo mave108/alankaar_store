@@ -1,0 +1,7 @@
+// flex
+@mixin text-overflow{
+    text-overflow: ellipsis;
+    word-break: break-word;
+    overflow: hidden;
+  }
+  

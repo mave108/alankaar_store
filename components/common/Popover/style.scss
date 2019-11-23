@@ -1,0 +1,8 @@
+@import "../style/utils/settings";
+@import "../style/mixins/boxShadow";
+.popover{
+ @include boxShadow;
+ .body{
+
+ }
+}

@@ -1,0 +1,55 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+
+.b-single-wrapper{    
+    width: 38.9rem;
+   .image{    
+       width: auto;   
+       height: 26.8rem;;    
+   }
+   .details{
+       height: auto;
+       width: calc(100% - 4rem);
+       margin: 0 auto;
+       margin-top: -7rem;
+       background: #fff;
+       position: relative;
+       z-index: 9;
+       padding: 2.7rem 2.7rem 0 2.7rem;
+       border-radius: 5px;
+       .meta{
+           font-size: 1.3rem;
+           color: #444;
+           text-align: center;           
+          .author{
+             
+          }
+          .date{
+            padding: 0 2rem 0 1rem;
+          }
+          .comment{
+            &::before{
+                display: inline-block;
+                content: '';
+                height: 1.7rem;
+                width: 1.8rem;
+                margin-right: .6rem;
+                background: url('/static/icons/comment.svg') no-repeat center center;
+            }
+          }
+       }
+       .title{
+          margin-top: 2.5rem;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          text-align: center;
+       }
+       .description{
+           margin-top: 2rem;
+          font-size: 1.2rem;
+          line-height: 1.9rem;
+          text-align: center;
+       }
+   }
+
+}

@@ -5,7 +5,7 @@ const HowWeWork = (props) => {
     return (
         <section>
             <div className="home-section-heading container hww-section">
-                <h3>How We Works</h3>
+                <h3>How We Craft</h3>
                 <h4>Lorem Ipsum has been the industry's standard dummy text ever</h4>
                 <div className="clearfix-height"></div>
                 <div className="hww-content">

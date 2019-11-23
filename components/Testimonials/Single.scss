@@ -2,28 +2,33 @@
 @import "../common/style/mixins/flex";
 @import "../common/style/mixins/boxShadow";
 @import "../common/style/mixins/borderRadius";
-
+@import "../common/style/mixins/textOverflow";
 .tslide{    
     @include boxShadow;
     @include border-radius(.5rem);
-    padding: 5.8rem 7.5rem 0 10.1rem;
+    padding: 5rem 7.5rem 0 8rem;
     font-size: 16px;
     font-weight: normal;
     color: rgba(0, 0, 0, 0.54);
     flex: 1;
     background: #fff;
+    height: 26rem;
     .text{
         width: 36.4rem;
+        font-size: 1.4rem;
         line-height: 1.88;
-        padding-bottom: 2.2rem;
+        height: 12.6rem;
+        margin-bottom: 1rem;
+        @include text-overflow;
         &::before{
             content: "";
             display: inline-block;
             background: url('/static/icons/quote.svg') no-repeat center center;
             width: 5.4rem;
             height: 5rem;
-            margin-left: calc(-5.4rem - 1.7rem);
-            margin-right: 1.7rem;
+            position: absolute;
+            left: 2rem;
+            top:2.5rem;
         }
     }
     .user-name{

@@ -1,0 +1,9 @@
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+
+.bstrip{
+    @include flex(row,nowrap);
+    justify-content: space-between;
+    margin-bottom: 6.3rem;
+    padding: 0 2rem;
+}

@@ -10,13 +10,14 @@ import HowWeWork from '../components/HowWeWork/HowWeWork';
 import SuccessBlock from '../components/SuccessBlock/SuccessBlock';
 import Testimonials from '../components/Testimonials/Testimonials';
 import InstaPosts from '../components/InstaPosts/InstaPosts';
+import BlogStrip from '../components/Blog/BlogStrip';
 import { getHeadData, getPosts } from '../components/common/Head/Ducks/Actions';
 import { getTestimonials } from '../components/Testimonials/ducks/actions';
+import Popover from '../components/common/Popover/Popover';
 
 class Index extends React.Component {
   static async getInitialProps({ reduxStore, req }) {
     const isServer = !!req
-    console.log('index page');
     await reduxStore.dispatch(getTestimonials());
     return {}
   }
@@ -31,18 +32,34 @@ class Index extends React.Component {
   }
 
   render() {
+    const { testimonials = [] } = this.props;
+    console.log("index page", this.props);
     return (
       <BaseLayout>
+        {/* <Popover>
+          <p>ddffds dfdf dfdfd dsf</p>
+          <p>ddffds dfdf dfdfd dsf</p>
+          <p>ddffds dfdf dfdfd dsf</p>
+          <p>ddffds dfdf dfdfd dsf</p>
+        </Popover> */}
         <Banner />
         <AdBox />
         <ProductContainer />
         <HowWeWork />
         <SuccessBlock />
-        <Testimonials />
+        <Testimonials data={testimonials} />
         <InstaPosts />
+        <BlogStrip />
       </BaseLayout>
     );
   }
 }
 
-export default connect()(Index)
+function mapStateToProps(state) {
+  const { testimonials } = state;
+  return {
+    testimonials
+  }
+}
+
+export default connect(mapStateToProps, null)(Index)

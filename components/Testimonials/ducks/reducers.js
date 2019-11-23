@@ -4,7 +4,7 @@ import { GET_TESTIMONIAL_DATA } from './Types';
 export const TestimonialReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_TESTIMONIAL_DATA:
-            return Object.assign({}, state, { ...action.payload })
+            return Object.assign([], state, [...action.payload])
         default:
             return state
     }
