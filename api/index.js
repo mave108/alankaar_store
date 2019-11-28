@@ -1,7 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const compression = require('compression');
 const path = require('path');
-const routes = require('../universalRoutes');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 // SERVICE
 // const authService = require('./services/auth');
@@ -10,10 +13,12 @@ const dev = process.env.NODE_ENV !== 'production';
 // const config = require('./config');
 
 // const Book = require('./models/book');
-const bodyParser = require('body-parser');
 
 const HeadRoutes = require('./routes/head');
 const testimonialsRoutes = require('./routes/testimonials');
+const blogRoutes = require('./routes/blog');
+const productsRoutes = require('./routes/products');
+const cartRoutes = require('./routes/cart');
 
 const robotsOptions = {
     root: path.join(__dirname, "../static"),
@@ -35,24 +40,14 @@ const secretData = [
 
 const server = express();
 server.use(compression());
-server.use(bodyParser.json());
-// const pool = mysql.createPool(config.db_config);
-// server.use((req, res, next) => {
-//     pool.getConnection(function (err, connection) {
-//         if (err) {
-//             console.log("error occured connecting database", err);
-//             next();
-//         }
-//         else {
-//             console.log("connected to database successfully");
-//             res.locals.dbPool = connection;
-//             next();
-//         }
-//     });
-//     // res.locals.connect();            
-// });
+server.use(bodyParser.json({ type: '*/*' }));
+server.use(cors());
+server.use(cookieParser());
 server.use('/api/v1/head', HeadRoutes);
-server.use('/api/v1/testimonials', testimonialsRoutes)
+server.use('/api/v1/testimonials', testimonialsRoutes);
+server.use('/api/v1/blog', blogRoutes);
+server.use('/api/v1/product', productsRoutes);
+server.use('/api/v1/cart', cartRoutes);
 
 server.get('/robots.txt', (req, res) => {
     return res.status(200).sendFile('robots.txt', robotsOptions);

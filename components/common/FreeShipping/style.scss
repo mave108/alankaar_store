@@ -1,0 +1,38 @@
+@import '../style/utils/settings';
+@import '../style/mixins/flex';
+
+.free-shipping{
+  @include flex(row,nowrap);
+  justify-content: space-between;
+  margin: 2rem 0;
+  div{
+      flex: 1;
+      h3{
+        font-size: 1.6rem;
+        font-weight: bold;        
+        color: #444;
+      }
+      h4{        
+          padding-top: .5rem;
+        font-size: 1.2rem;        
+        color: rgba(0, 0, 0, .36);
+      }
+  }  
+  div:nth-child(1)::before,div:nth-child(2)::before,div:nth-child(3)::before{
+    content: '';
+    display: block;
+    float: left;
+    height: 5rem;
+    width: 5rem;    
+    margin-right: 2.5rem;
+  }
+  div:nth-child(1)::before{
+    background: url('/static/icons/truck.svg') no-repeat center center;
+  }
+  div:nth-child(2)::before{
+    background: url('/static/icons/support.svg') no-repeat center center;
+  }
+  div:nth-child(3)::before{
+    background: url('/static/icons/return.svg') no-repeat center center;
+  }
+}

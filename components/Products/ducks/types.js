@@ -1,0 +1,1 @@
+export const POPULAR_PRODUCTS = 'propular_products';

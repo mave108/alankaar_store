@@ -3,7 +3,7 @@ import './single.scss';
 
 const Single = (props) => {
 
-    const { image } = props;
+    const { image, title, author, description } = props;
     return (
         <div className="b-single-wrapper">
             <div className="image">
@@ -11,19 +11,12 @@ const Single = (props) => {
             </div>
             <div className="details">
                 <div className="meta">
-                    <span className="author">by <strong>ADRIAN</strong></span>
+                    <span className="author">by <strong>{author}</strong></span>
                     <span className="date">on January 14, 2017</span>
                     <span className="comment">16</span>
                 </div>
-                <div className="title">
-                    DOLORE EU FUGIATNULLA PARIATUR
-        FUGIATNULLA
-                </div>
-                <div className="description">
-                    Lorem ipsum dolor sit amet conse ctetur adipisicing
-     elit, sed do eiusmod tempor incididunt ut
-    labore et dolore magna aliqua.
-                </div>
+                <div className="title">{title}</div>
+                <div className="description">{description}</div>
             </div>
         </div >
     );

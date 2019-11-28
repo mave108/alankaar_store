@@ -2,7 +2,7 @@ import React from 'react';
 import './blogStrip.scss';
 import SinglePost from './Single';
 
-const BlogStrip = (props) => {
+const BlogStrip = ({ data = [] }) => {
 
     return (
         <section>
@@ -10,9 +10,7 @@ const BlogStrip = (props) => {
                 <h3>Latest From Blog</h3>
                 <h4>The freshest and most exciting blog</h4>
                 <div className="bstrip">
-                    <SinglePost image="/static/images/blog1.png" />
-                    <SinglePost image="/static/images/blog2.png" />
-                    <SinglePost image="/static/images/blog3.png" />
+                    {data.length > 0 && data.map((post) => <SinglePost {...post} />)}
                 </div>
             </div>
         </section>

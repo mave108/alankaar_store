@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="47px" viewBox="0 0 50 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>support</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="support" transform="translate(0.000000, -1.000000)">
+            <rect id="Rectangle" x="0" y="0" width="50" height="50"></rect>
+            <path d="M44,20 C44,18.896 43.104,18 42,18 C40.896,18 40,18.896 40,20 C40,20.476 40,34.524 40,35 C40,36.104 40.896,37 42,37 C43.104,37 44,36.104 44,35 C44,34.524 44,20.476 44,20 Z" id="Path" stroke="#FF5630" stroke-width="2"></path>
+            <path d="M28,47 C29.104,47 30,46.104 30,45 C30,43.896 29.104,43 28,43 C27.524,43 23.476,43 23,43 C21.896,43 21,43.896 21,45 C21,46.104 21.896,47 23,47 C23.476,47 27.524,47 28,47 Z" id="Path" stroke="#FF5630" stroke-width="2"></path>
+            <path d="M8,19 C8,9.611 15.611,2 25,2 C34.389,2 42,9.611 42,19" id="Path" stroke="#FF5630" stroke-width="2"></path>
+            <path d="M44,20 C46.762,20 49,23.357 49,27.5 C49,31.641 46.762,35 44,35" id="Path" stroke="#FF5630" stroke-width="2"></path>
+            <path d="M6,20 C6,18.896 6.896,18 8,18 C9.104,18 10,18.896 10,20 C10,20.476 10,34.524 10,35 C10,36.104 9.104,37 8,37 C6.896,37 6,36.104 6,35 C6,34.524 6,20.476 6,20 Z" id="Path" stroke="#FF5630" stroke-width="2"></path>
+            <path d="M6,20 C3.239,20 1,23.357 1,27.5 C1,31.641 3.239,35 6,35" id="Path" stroke="#FF5630" stroke-width="2"></path>
+            <path d="M42,37 C42,42 39,45 34,45 L30,45" id="Path" stroke="#FF5630" stroke-width="2"></path>
+        </g>
+    </g>
+</svg>

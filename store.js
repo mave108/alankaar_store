@@ -3,21 +3,24 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 import HeadReducer from './components/common/Head/Ducks/Reducer';
 import TestimonialReducer from './components/Testimonials/ducks/reducers';
-
-const exampleInitialState = {
-  lastUpdate: 0,
-  light: false,
-  count: 0,
+import BloglReducer from './components/Blog/ducks/reducers';
+import ProductReducer from './components/Products/ducks/reducers';
+import CartReducer from './components/Cart/ducks/reducers';
+const InitialState = {
+  cart: []
 }
 
 // ROOT REDUCERS
 const rootReducer = combineReducers({
   head: HeadReducer,
-  testimonials: TestimonialReducer
+  testimonials: TestimonialReducer,
+  blog: BloglReducer,
+  products: ProductReducer,
+  cart: CartReducer
 });
 
 
-export function initializeStore(initialState = {}) {
+export function initializeStore(initialState = InitialState) {
   return createStore(
     rootReducer,
     initialState,
