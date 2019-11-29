@@ -7,7 +7,10 @@ import BloglReducer from './components/Blog/ducks/reducers';
 import ProductReducer from './components/Products/ducks/reducers';
 import CartReducer from './components/Cart/ducks/reducers';
 const InitialState = {
-  cart: []
+  cart: {
+    items: [],
+    item_ids: []
+  }
 }
 
 // ROOT REDUCERS

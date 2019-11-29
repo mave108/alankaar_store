@@ -2,14 +2,16 @@ import App from 'next/app'
 import React from 'react'
 import withReduxStore from '../lib/with-redux-store'
 import { Provider } from 'react-redux'
-import { getHeadData, getPosts } from '../components/common/Head/Ducks/Actions';
 import { parseCookies, setCookie } from 'nookies'
 const uniqid = require('uniqid');
+import { getHeadData } from '../components/common/Head/Ducks/Actions';
+import { getCart } from '../components/Cart/ducks/actions';
+
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     const { reduxStore } = ctx;
-    const { user_token, csrftoken } = parseCookies(ctx)
+    const { user_token } = parseCookies(ctx)
 
     //set user token cookie if not
     if (!user_token) {
@@ -24,6 +26,9 @@ class MyApp extends App {
     }
 
     await reduxStore.dispatch(getHeadData(true));
+    if (user_token) {
+      await reduxStore.dispatch(getCart(user_token));
+    }
     // await reduxStore.dispatch(getTestimonials());
     return { ...appProps };
   }

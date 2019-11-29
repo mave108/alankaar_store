@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.scss';
 
-const Popover = ({ children }) => {
+const noop = () => { }
+
+const Popover = ({ children, show, close = noop }) => {
+
+    const stopBubling = (e) => {
+        e.stopPropagation();
+    }
     return (
-        <div className="popover">
-            <div className="body">
-                {children}
+        <div onClick={stopBubling}>
+            <div className={`popover ${show ? 'show' : 'hide'}`} >
+                <div className="body">
+                    {children}
+                </div>
             </div>
+            {show && <div className="backdrop" onClick={close}></div>}
         </div>
     );
 }

@@ -1,0 +1,107 @@
+
+@import "../common/style/utils/settings";
+@import "../common/style/mixins/flex";
+
+
+.small-cart{  
+  padding: 26px 20px 23px;
+  background-color: $white;
+  width: 30rem;
+  cursor: auto;  
+  .vertical-scroll{
+    height: 182px;
+    overflow-y: auto;
+  }
+  .item{
+      @include flex(row,nowrap);
+      justify-content: flex-start;
+      align-content: stretch;
+      align-items: flex-start;
+      &:not(:first-child){
+          margin-top: 1.6rem;
+      }
+      .image {
+          flex: 1 1 auto;
+          img{
+          width: 6.7rem;
+          height: auto;
+      }}
+      .description{
+        margin-left: 2rem;
+        flex:2 1 auto;
+          h3{
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+            transition: color .2s linear;
+          }
+          ul {
+            list-style: none;
+            margin: .4rem 0 0;
+            padding: 0 0 .5rem;
+            li{
+            color: #999;
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+          }
+        }
+        .qty{
+            display: inline-flex;
+            font-size: 1.4rem;
+            color: #777;
+        }
+        .price{
+            display: inline-flex;
+            font-size: 1.6rem;
+            color: #191919;
+            font-weight: 500;
+        }
+      }
+      .action{
+          .trash{
+              background: url('/static/icons/trash.svg') no-repeat center center;
+              background-size: 100%;
+              width: 2rem;
+              height: 3rem;
+              border: none;
+              cursor: pointer;
+          }
+      }
+  }
+  .cart-total-row{
+      @include flex(row, nowrap);
+      justify-content: space-between;
+      align-content: stretch;
+      align-items: flex-start;
+      border-top: 1px solid #e9e7e7;
+      margin-top: 2rem;
+      padding-top: 1.4rem;
+      .title{
+        font-weight: 500;
+        color: #191919;
+        font-size: 1.4rem;        
+      }
+      .cart-total-price{
+        flex: 2 1 auto;
+        text-align: right;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #191919;
+      }
+  }
+  .cart-button-row,.view-cart-action{
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+    .btn{
+        width: 100%;
+    }
+     
+  }
+  .view-cart-action{
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    transition: .2s linear;
+  }
+}
