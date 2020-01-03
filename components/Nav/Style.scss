@@ -101,3 +101,28 @@
     }
 }
 }
+.search-form{
+    position: relative;
+    .inner{
+    transition: height .2s ease-in-out; 
+    background: #fff;
+    .main-search{
+        width: 80%;
+        height: 4rem;
+        margin: 0 auto;
+        margin-top: 3rem;
+        margin-left: 10%;
+        border: none;
+        border-bottom: 1px solid #f7f7f7;
+        font-size: 2rem;
+    }
+    &.slide-down{
+        height: 10rem;
+        overflow: initial;
+    }
+    &.slide-up{
+        height: 0;
+        overflow: hidden;
+    }
+}
+}

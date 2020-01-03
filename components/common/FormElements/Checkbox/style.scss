@@ -1,0 +1,75 @@
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    font-size: 2.2rem;
+    user-select: none;
+    .checkbox-label{        
+        font-size: 1.4rem;
+        color: #2d2c2c;
+        line-height: 1.14;
+    }
+    input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+        /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: .5rem;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    border-radius: .3rem;
+    border: solid .1rem #979797;
+  }
+  /* On mouse-over, add a grey background color */
+  
+  /* When the checkbox is checked, add a blue background */
+   input[type="checkbox"]:checked ~ .checkmark {
+    background-color: #ff5630;
+    border: solid .1rem #ff5630;   
+  }
+  &:hover input[type="checkbox"] ~ .checkmark{
+    border: solid .1rem #ff5630;   
+  }
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  /* Show the checkmark when checked */
+  input[type="checkbox"] ~ .checkmark:after {
+    display: block;
+  }
+  
+   /* Style the checkmark/indicator */
+    .checkmark:after {
+    left: .6rem;
+    top: .2rem;
+    width: .5rem;
+    height: 1rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);  
+  }
+  }
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  

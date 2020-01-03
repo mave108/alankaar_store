@@ -4,12 +4,12 @@
 
 
 .small-cart{  
-  padding: 26px 20px 23px;
+  padding: 2.6rem 2.0rem 2.3rem;
   background-color: $white;
   width: 30rem;
   cursor: auto;  
   .vertical-scroll{
-    height: 182px;
+    height: 23.5rem;
     overflow-y: auto;
   }
   .item{
@@ -73,7 +73,7 @@
       justify-content: space-between;
       align-content: stretch;
       align-items: flex-start;
-      border-top: 1px solid #e9e7e7;
+      border-top: .1rem solid #e9e7e7;
       margin-top: 2rem;
       padding-top: 1.4rem;
       .title{
@@ -100,7 +100,7 @@
   }
   .view-cart-action{
     display: inline-block;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-decoration: none;
     transition: .2s linear;
   }

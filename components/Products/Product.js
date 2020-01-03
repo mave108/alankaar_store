@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import './Product.scss';
-import { discountedPrice, actualPrice } from '../utils/price';
+import { discountedPrice, actualPrice } from '../../utils/price';
 import { addToCart } from '../Cart/ducks/actions';
-import { getCookie } from '../utils/cookie';
+import { getCookie } from '../../utils/cookie';
 
 const Product = (props) => {
     const { name, image, price, discount = 0, nid } = props;

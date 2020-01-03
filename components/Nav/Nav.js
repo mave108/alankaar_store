@@ -4,6 +4,8 @@ import Link from 'next/link';
 import './Style.scss';
 import Popover from '../common/Popover/Popover';
 import dynamic from 'next/dynamic';
+import { encrypt } from '../../utils/crypt';
+import Input from '../common/FormElements/Input';
 
 
 const MiniCart = dynamic(() => import('../Cart/Minicart'),
@@ -16,6 +18,7 @@ class Nav extends Component {
         this.navRef = React.createRef();
         this.state = {
             displaySmallCart: false,
+            displaySearch: false
         }
         this.toggleMiniCart = this.toggleMiniCart.bind(this);
     }
@@ -26,7 +29,7 @@ class Nav extends Component {
                     this.navRef.current.classList.add("sticky");
                     this.navRef.current.style.transform = "translateY(0)";
                     this.navRef.current.style.position = "fixed";
-                    this.setState({ displaySmallCart: false });
+                    this.setState({ displaySmallCart: false, displaySearch: false });
                 }
             } else {
                 if (this.navRef.current != null) {
@@ -40,30 +43,36 @@ class Nav extends Component {
     toggleMiniCart() {
         this.setState({ displaySmallCart: true });
     }
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log(prevProps, prevState);
+    }
     render() {
         const { cart: { item_ids = [], items } = {} } = this.props;
         return (
             <nav ref={this.navRef} className="nav-container">
-                {/* <div className="user-nav">
-                   
-                </div> */}
+
+                <div className='search-form'>
+                    <div className={`inner ${this.state.displaySearch ? 'slide-down' : 'slide-up'}`}>
+                        <Input type="text" placeholder="Search Here" className="main-search" />
+                    </div>
+                </div>
                 <div className="main-nav container">
                     <div className="logo">
                         <img src="/static/images/logo@3x.png" width="185" />
                     </div>
                     <div className="menu">
                         <ul>
-                            <li className="active"><Link className="active">Home</Link></li>
-                            <li><Link>Men</Link></li>
-                            <li><Link>Women</Link></li>
-                            <li><Link>New</Link></li>
-                            <li><Link>Trending</Link></li>
-                            <li><Link>Sale</Link></li>
+                            <li className="active"><Link className="active" href="/">Home</Link></li>
+                            <li><Link href={{ pathname: '/styles', query: { category: 'men', filter: encrypt({ Subcategories: ['men'] }) } }} > Men</Link></li>
+                            <li><Link href={{ pathname: '/styles', query: { category: 'women', filter: encrypt({ Subcategories: ['women'] }) } }}>Women</Link></li>
+                            <li><Link href={{ pathname: '/styles', query: { category: 'new', filter: encrypt({ Subcategories: ['new'] }) } }}>New</Link></li>
+                            <li><Link href={{ pathname: '/styles', query: { category: 'trending', filter: encrypt({ Subcategories: ['trending'] }) } }}>Trending</Link></li>
+                            <li><Link href={{ pathname: '/styles', query: { category: 'sale', filter: encrypt({ Subcategories: ['sale'] }) } }}>Sale</Link></li>
                         </ul>
                     </div>
                     <div className="user-nav">
                         <div className="inner">
-                            <div className="nav-img search"></div>
+                            <div className="nav-img search" onClick={() => this.setState({ displaySearch: !this.state.displaySearch })}></div>
                             <div className="nav-img cart" style={{ position: 'relative' }} onClick={this.toggleMiniCart}>
                                 {item_ids.length > 0 && <sup className="count">{item_ids.length}</sup>}
                                 <Popover show={this.state.displaySmallCart} close={() => { this.setState({ displaySmallCart: false }) }}>

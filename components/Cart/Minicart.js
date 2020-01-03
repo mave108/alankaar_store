@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 import './minicart.scss';
-import { discountedPrice } from '../utils/price';
+import { discountedPrice } from '../../utils/price';
 
 
 

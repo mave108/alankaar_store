@@ -1,15 +1,19 @@
 import React from 'react';
-import Product from './Product';
 import './Productcontainer.scss';
 
-const PopularProducts = ({ data = [] }) => {
+const ProductContainer = ({ children }) => {
+    console.log("child count", React.Children.count(children));
+    const [filter, products] = React.Children.toArray(children);
     return (
         <section>
             <div className="home-section-heading container pp-section">
-                <h3>Popular Products</h3>
-                <h4>Lorem Ipsum has been the industry's standard dummy text ever</h4>
-                < div className="product-container" >
-                    {data.length > 0 && data.map((product) => <Product {...product} />)}
+                <div className="content">
+                    {React.Children.count(children) > 1 && <div className="left-wrapper">
+                        {filter}
+                    </div>}
+                    <div className="right-wrapper">
+                        {products}
+                    </div>
                 </div>
             </div>
         </section >
@@ -17,4 +21,4 @@ const PopularProducts = ({ data = [] }) => {
     );
 }
 
-export default PopularProducts;
+export default ProductContainer;

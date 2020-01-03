@@ -1,18 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux';
 // import { startClock, serverRenderClock } from '../store'
-import Examples from '../components/examples'
 import BaseLayout from '../components/common/layout/BaseLayout';
 import Banner from '../components/Banner/Banner';
 import AdBox from '../components/AdBox/AdBox';
-import PopularProducts from '../components/Products/ProductContainer';
+import PopularProducts from '../components/Products/PopularProduct';
 import HowWeWork from '../components/HowWeWork/HowWeWork';
 import SuccessBlock from '../components/SuccessBlock/SuccessBlock';
 import Testimonials from '../components/Testimonials/Testimonials';
 import InstaPosts from '../components/InstaPosts/InstaPosts';
 import BlogStrip from '../components/Blog/BlogStrip';
 import FreeShipping from '../components/common/FreeShipping/FreeShipping';
-import { getHeadData, getPosts } from '../components/common/Head/Ducks/Actions';
 import { getTestimonials } from '../components/Testimonials/ducks/actions';
 import { getBlogs } from '../components/Blog/ducks/actions';
 import { getPopularProducts } from '../components/Products/ducks/actions';
@@ -29,7 +27,6 @@ class Index extends React.Component {
 
   componentDidMount() {
     const { dispatch } = this.props
-    // this.timer = startClock(dispatch)
   }
 
   componentWillUnmount() {

@@ -8,4 +8,17 @@
         @include flex(row,nowrap);
         justify-content: space-between;        
     }
+    .content{
+        @include flex(row, nowrap);
+        justify-content: space-between;
+        .left-wrapper{
+            width: calc(30% - 5.2rem);
+            margin-right: 5.2rem;
+        }
+        .right-wrapper {
+          width: 70%;
+          @include flex(row,wrap);
+          justify-content: space-between;     
+        }
+    }
 }
