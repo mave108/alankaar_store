@@ -1,5 +1,5 @@
 import React from 'react';
-import './Productcontainer.scss';
+import './ProductContainer.scss';
 
 const ProductContainer = ({ children }) => {
     console.log("child count", React.Children.count(children));
