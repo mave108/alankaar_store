@@ -1,5 +1,5 @@
 import axios from '../../../axios/interceptor';
-import { GET_TESTIMONIAL_DATA } from './Types';
+import { GET_TESTIMONIAL_DATA } from './types';
 
 
 
