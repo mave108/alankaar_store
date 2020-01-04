@@ -1,4 +1,4 @@
-import { GET_TESTIMONIAL_DATA } from './Types';
+import { GET_TESTIMONIAL_DATA } from './types';
 
 
 export const TestimonialReducer = (state = {}, action) => {
