@@ -12,8 +12,8 @@ phases:
     commands:
       # copy the contents of /build to S3
       # - aws s3 cp --recursive --acl public-read /.next s3://${DeployBucket}/ 
-      # - aws s3 cp --recursive --acl public-read /node_modules s3://${DeployBucket}/ 
-      # - aws s3 cp --acl public-read /package.json s3://${DeployBucket}/ 
+      - aws s3 cp --recursive --acl public-read node_modules s3://${DeployBucket}/ 
+      - aws s3 cp --acl public-read package.json s3://${DeployBucket}/ 
       # set the cache-control headers for service-worker.js to prevent
       # browser caching
       - >
