@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Style.scss';
+import './style.scss';
 
 const BreadCrumb = (props) => {
 

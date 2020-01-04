@@ -62,7 +62,7 @@ class Nav extends Component {
                     </div>
                     <div className="menu">
                         <ul>
-                            <li className="active"><Link className="active" href="/">Home</Link></li>
+                            <li className="active"><Link href="/">Home</Link></li>
                             <li><Link href={{ pathname: '/styles', query: { category: 'men', filter: encrypt({ Subcategories: ['men'] }) } }} > Men</Link></li>
                             <li><Link href={{ pathname: '/styles', query: { category: 'women', filter: encrypt({ Subcategories: ['women'] }) } }}>Women</Link></li>
                             <li><Link href={{ pathname: '/styles', query: { category: 'new', filter: encrypt({ Subcategories: ['new'] }) } }}>New</Link></li>

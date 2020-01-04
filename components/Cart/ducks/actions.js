@@ -29,10 +29,11 @@ export const getCart = (user_token) => {
             .then(({ data }) => {
                 const { items, item_ids } = data;
                 dispatch({ type: ADD_TO_CART_ITEMS, payload: items });
-                dispatch({ type: ADD_TO_CART_ITEM_IDS, payload: item_ids })
+                dispatch({ type: ADD_TO_CART_ITEM_IDS, payload: item_ids });
             })
             .catch(error => {
-                dispatch({ type: ADD_TO_CART, payload: [] })
+                dispatch({ type: ADD_TO_CART_ITEMS, payload: [] });
+                dispatch({ type: ADD_TO_CART_ITEM_IDS, payload: [] })
             })
     }
 
