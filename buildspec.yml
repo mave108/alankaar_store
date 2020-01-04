@@ -2,8 +2,7 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - echo Installing source NPM dependencies...
-      - cp -R api s3://${DeployBucket}/
+      - echo Installing source NPM dependencies...      
       - npm install
   build:
     commands:
@@ -14,8 +13,8 @@ phases:
       # copy the contents of /build to S3
       # - aws s3 cp --recursive --acl public-read /.next s3://${DeployBucket}/ 
       # - aws s3 cp --recursive --acl public-read node_modules s3://${DeployBucket}/ 
-      
-      - aws s3 cp --acl public-read package.json s3://${DeployBucket}/ 
+      - cp -R api s3://${DeployBucket}/
+      - cp package.json s3://${DeployBucket}/ 
       # set the cache-control headers for service-worker.js to prevent
       # browser caching
       - >
