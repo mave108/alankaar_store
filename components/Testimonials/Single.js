@@ -1,5 +1,5 @@
 import React from 'react';
-import './single.scss';
+import './Single.scss';
 
 const SingleTestimonial = ({ active, name, city, description }) => {
     return (
