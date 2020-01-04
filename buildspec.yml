@@ -3,7 +3,7 @@ phases:
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
-      - cp -R api api
+      - cp -R api s3://${DeployBucket}/
       - npm install
   build:
     commands:
