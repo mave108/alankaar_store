@@ -15,7 +15,6 @@ const MiniCart = dynamic(() => import('../Cart/Minicart'),
 class Nav extends Component {
     constructor(props) {
         super(props);
-        this.navRef = React.createRef();
         this.state = {
             displaySmallCart: false,
             displaySearch: false
@@ -34,7 +33,7 @@ class Nav extends Component {
     render() {
         const { cart: { item_ids = [], items } = {} } = this.props;
         return (
-            <nav ref={this.navRef} className="nav-container">
+            <nav className="nav-container">
 
                 <div className='search-form'>
                     <div className={`inner ${this.state.displaySearch ? 'slide-down' : 'slide-up'}`}>
@@ -60,9 +59,10 @@ class Nav extends Component {
                             <div className="nav-img search" onClick={() => this.setState({ displaySearch: !this.state.displaySearch })}></div>
 
                             {item_ids.length > 0 && <sup className="count">{item_ids.length}</sup>}
-                            <Popover content={<MiniCart data={items} ids={item_ids} />}>
+                            {item_ids.length > 0 ? (<Popover content={<MiniCart data={items} ids={item_ids} />}>
                                 <div className="nav-img cart"></div>
                             </Popover>
+                            ) : <div className="nav-img cart"></div>}
                             <div className="nav-img user"></div>
                             {/* <div className="contact-up">Contact Us - <span>1800 258 5970</span></div> */}
                         </div>
