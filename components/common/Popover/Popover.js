@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Intent, Popover as PPopover, PopoverInteractionKind, Position } from "@blueprintjs/core";
 import './style.scss';
 
-const noop = () => { }
 
-const Popover = ({ children, show, close = noop }) => {
-
-    const stopBubling = (e) => {
-        e.stopPropagation();
-    }
+const Popover = ({ children, content }) => {
     return (
-        <div onClick={stopBubling}>
-            <div className={`popover ${show ? 'show' : 'hide'}`} >
-                <div className="body">
+        <div className="popover">
+            <div className="body">
+                <PPopover
+                    interactionKind={PopoverInteractionKind.CLICK}
+                    popoverClassName="bp3-popover-content-sizing"
+                    canEscapeKeyClose={true}
+                    usePortal={true}
+                    content={content}
+                >
                     {children}
-                </div>
+                </PPopover>
             </div>
-            {show && <div className="backdrop" onClick={close}></div>}
         </div>
     );
 }

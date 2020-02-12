@@ -3,9 +3,11 @@ import React from 'react'
 import withReduxStore from '../lib/with-redux-store'
 import { Provider } from 'react-redux'
 import { parseCookies, setCookie } from 'nookies'
-const uniqid = require('uniqid');
 import { getHeadData } from '../components/common/Head/Ducks/Actions';
 import { getCart } from '../components/Cart/ducks/actions';
+
+
+const uniqid = require('uniqid');
 
 
 class MyApp extends App {

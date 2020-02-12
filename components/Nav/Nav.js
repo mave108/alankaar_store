@@ -23,21 +23,6 @@ class Nav extends Component {
         this.toggleMiniCart = this.toggleMiniCart.bind(this);
     }
     componentDidMount() {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 0) {
-                if (this.navRef.current != null) {
-                    this.navRef.current.classList.add("sticky");
-                    this.navRef.current.style.transform = "translateY(0)";
-                    this.navRef.current.style.position = "fixed";
-                    this.setState({ displaySmallCart: false, displaySearch: false });
-                }
-            } else {
-                if (this.navRef.current != null) {
-                    this.navRef.current.classList.remove("sticky");
-                    this.navRef.current.style = " ";
-                }
-            }
-        })
 
     }
     toggleMiniCart() {
@@ -73,12 +58,11 @@ class Nav extends Component {
                     <div className="user-nav">
                         <div className="inner">
                             <div className="nav-img search" onClick={() => this.setState({ displaySearch: !this.state.displaySearch })}></div>
-                            <div className="nav-img cart" style={{ position: 'relative' }} onClick={this.toggleMiniCart}>
-                                {item_ids.length > 0 && <sup className="count">{item_ids.length}</sup>}
-                                <Popover show={this.state.displaySmallCart} close={() => { this.setState({ displaySmallCart: false }) }}>
-                                    {this.state.displaySmallCart && <MiniCart data={items} ids={item_ids} />}
-                                </Popover>
-                            </div>
+
+                            {item_ids.length > 0 && <sup className="count">{item_ids.length}</sup>}
+                            <Popover content={<MiniCart data={items} ids={item_ids} />}>
+                                <div className="nav-img cart"></div>
+                            </Popover>
                             <div className="nav-img user"></div>
                             {/* <div className="contact-up">Contact Us - <span>1800 258 5970</span></div> */}
                         </div>
