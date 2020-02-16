@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductContainer.scss';
+import { Flipper } from 'react-flip-toolkit'
 
 const ProductContainer = ({ children }) => {
     console.log("child count", React.Children.count(children));
@@ -12,7 +13,9 @@ const ProductContainer = ({ children }) => {
                         {filter}
                     </div>}
                     <div className="right-wrapper">
+                        {/* <Flipper flipKey='foo' spring='wobbly'> */}
                         {products}
+                        {/* </Flipper> */}
                     </div>
                 </div>
             </div>

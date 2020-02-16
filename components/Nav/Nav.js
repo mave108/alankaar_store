@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Link from 'next/link';
 import './Style.scss';
 import Popover from '../common/Popover/Popover';
 import dynamic from 'next/dynamic';
-import { encrypt } from '../../utils/crypt';
 import Input from '../common/FormElements/Input';
+import MenuItems from './MenuItems';
 
 
 const MiniCart = dynamic(() => import('../Cart/Minicart'),
@@ -17,24 +16,15 @@ class Nav extends Component {
         super(props);
         this.state = {
             displaySmallCart: false,
-            displaySearch: false
+            displaySearch: false,
+            activeMenu: 1,
         }
-        this.toggleMiniCart = this.toggleMiniCart.bind(this);
     }
-    componentDidMount() {
 
-    }
-    toggleMiniCart() {
-        this.setState({ displaySmallCart: true });
-    }
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log(prevProps, prevState);
-    }
     render() {
         const { cart: { item_ids = [], items } = {} } = this.props;
         return (
             <nav className="nav-container">
-
                 <div className='search-form'>
                     <div className={`inner ${this.state.displaySearch ? 'slide-down' : 'slide-up'}`}>
                         <Input type="text" placeholder="Search Here" className="main-search" />
@@ -45,14 +35,7 @@ class Nav extends Component {
                         <img src="/static/images/logo@3x.png" width="185" />
                     </div>
                     <div className="menu">
-                        <ul>
-                            <li className="active"><Link href="/">Home</Link></li>
-                            <li><Link href={{ pathname: '/styles', query: { category: 'men', filter: encrypt({ Subcategories: ['men'] }) } }} > Men</Link></li>
-                            <li><Link href={{ pathname: '/styles', query: { category: 'women', filter: encrypt({ Subcategories: ['women'] }) } }}>Women</Link></li>
-                            <li><Link href={{ pathname: '/styles', query: { category: 'new', filter: encrypt({ Subcategories: ['new'] }) } }}>New</Link></li>
-                            <li><Link href={{ pathname: '/styles', query: { category: 'trending', filter: encrypt({ Subcategories: ['trending'] }) } }}>Trending</Link></li>
-                            <li><Link href={{ pathname: '/styles', query: { category: 'sale', filter: encrypt({ Subcategories: ['sale'] }) } }}>Sale</Link></li>
-                        </ul>
+                        <MenuItems />
                     </div>
                     <div className="user-nav">
                         <div className="inner">

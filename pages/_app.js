@@ -5,9 +5,12 @@ import { Provider } from 'react-redux'
 import { parseCookies, setCookie } from 'nookies'
 import { getHeadData } from '../components/common/Head/Ducks/Actions';
 import { getCart } from '../components/Cart/ducks/actions';
+import { PageTransition } from 'next-page-transitions'
+import { createToast, toaster } from '../utils/ui';
 
 
 const uniqid = require('uniqid');
+createToast();
 
 
 class MyApp extends App {
@@ -35,10 +38,40 @@ class MyApp extends App {
     return { ...appProps };
   }
   render() {
-    const { Component, pageProps, reduxStore } = this.props
+    const { Component, pageProps, reduxStore, router } = this.props
+
     return (
       <Provider store={reduxStore}>
-        <Component {...pageProps} />
+        <PageTransition
+          timeout={300}
+          classNames="page-transition"
+          loadingTimeout={{
+            enter: 400,
+            exit: 0,
+          }}
+          loadingClassNames="loading-indicator"
+        >
+          <Component {...pageProps} key={router.route} />
+
+        </PageTransition>
+        <style jsx global>{`
+          .page-transition-enter {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+          }
+          .page-transition-enter-active {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 300ms, transform 300ms;
+          }
+          .page-transition-exit {
+            opacity: 1;
+          }
+          .page-transition-exit-active {
+            opacity: 0;
+            transition: opacity 300ms;
+          }
+        `}</style>
       </Provider>
     )
   }

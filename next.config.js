@@ -1,8 +1,9 @@
 const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = withImages(withSass({
+module.exports = withImages(withCSS(withSass({
     webpack(config, { dev }) {
         if (config.mode === 'production') {
             if (Array.isArray(config.optimization.minimizer)) {
@@ -34,4 +35,4 @@ module.exports = withImages(withSass({
         });
         return config;
     },
-}));
+})));

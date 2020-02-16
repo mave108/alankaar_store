@@ -1,5 +1,7 @@
 import axios from '../../../axios/interceptor';
 import { ADD_TO_CART_ITEMS, ADD_TO_CART_ITEM_IDS } from './types';
+import { toaster } from '../../../utils/ui';
+import { ADDED_TO_CART } from '../../../utils/messages';
 
 export const addToCart = (nid, user_token) => {
     return (dispatch, getState) => {
@@ -11,6 +13,7 @@ export const addToCart = (nid, user_token) => {
         return axios.post('/cart/add', { nid, user_token })
             .then(({ data }) => {
                 dispatch({ type: ADD_TO_CART_ITEM_IDS, payload: item_ids });
+                toaster().show({ message: ADDED_TO_CART })
                 if (!itemAlreadyInCart) {
                     items.push(data);
                     dispatch({ type: ADD_TO_CART_ITEMS, payload: items });
